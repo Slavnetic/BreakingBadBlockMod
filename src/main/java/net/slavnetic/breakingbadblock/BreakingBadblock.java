@@ -1,6 +1,7 @@
 package net.slavnetic.breakingbadblock;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.CreativeModeTabEvent;
@@ -10,6 +11,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.slavnetic.breakingbadblock.block.ModBlocks;
+import net.slavnetic.breakingbadblock.item.ModCreativeModeTabs;
+import net.slavnetic.breakingbadblock.item.ModItems;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -24,6 +28,9 @@ public class BreakingBadblock
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -36,6 +43,22 @@ public class BreakingBadblock
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
+        if(event.getTab() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.HEISENBURGHAT);
+            event.accept(ModItems.HEISENBURGGLASSES);
+
+        }
+
+        if (event.getTab() == ModCreativeModeTabs.BREAKINGBADBLOCK_TAB)
+            event.accept(ModBlocks.BBBLOCK);
+
+
+        if(event.getTab() == ModCreativeModeTabs.BREAKINGBADBLOCK_TAB){
+            event.accept(ModItems.HEISENBURGHAT);
+            event.accept(ModItems.HEISENBURGGLASSES);
+            event.accept(ModItems.BOXCUTTER);
+
+        }
 
     }
 

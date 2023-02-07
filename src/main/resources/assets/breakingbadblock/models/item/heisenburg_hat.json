@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+  "layer0": "breakingbadblock:item/heisenburg_hat"
+  }
+}
