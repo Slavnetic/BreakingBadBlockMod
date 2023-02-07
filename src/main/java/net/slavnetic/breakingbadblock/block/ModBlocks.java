@@ -21,7 +21,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> BBBLOCK = registerBlock("bbblock",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(5f).requiresCorrectToolForDrops()));
-
+//BBBlock is a test block and should not be obtainable inside survival
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T>block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
@@ -38,3 +38,4 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 }
+//This class is for all the blocks inside the mod

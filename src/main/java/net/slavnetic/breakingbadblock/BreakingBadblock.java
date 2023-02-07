@@ -46,18 +46,18 @@ public class BreakingBadblock
         if(event.getTab() == CreativeModeTabs.INGREDIENTS){
             event.accept(ModItems.HEISENBURGHAT);
             event.accept(ModItems.HEISENBURGGLASSES);
-
+//This paragraph was made before i made the mod tab and should be diregarded
         }
 
         if (event.getTab() == ModCreativeModeTabs.BREAKINGBADBLOCK_TAB)
             event.accept(ModBlocks.BBBLOCK);
-
+//This if paragraph is for putting blocks into the creative mode tab
 
         if(event.getTab() == ModCreativeModeTabs.BREAKINGBADBLOCK_TAB){
             event.accept(ModItems.HEISENBURGHAT);
             event.accept(ModItems.HEISENBURGGLASSES);
             event.accept(ModItems.BOXCUTTER);
-
+//This if paragraph is for putting items into the creative mode tab
         }
 
     }
@@ -72,3 +72,4 @@ public class BreakingBadblock
         }
     }
 }
+//main class of the mod this is where all the custom items and blocks are added aswell as other things.

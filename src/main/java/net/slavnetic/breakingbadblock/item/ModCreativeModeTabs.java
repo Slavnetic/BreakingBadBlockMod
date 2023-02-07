@@ -21,3 +21,4 @@ public class ModCreativeModeTabs {
                         .title(Component.translatable("creativemodetab.breakingbadblock_tab")));
     }
 }
+//This is for the mod's creative mode tab and so it is usable.

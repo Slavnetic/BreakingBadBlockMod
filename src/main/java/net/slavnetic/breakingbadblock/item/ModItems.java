@@ -21,3 +21,4 @@ public class ModItems {
         ITEMS.register(eventBus);
     }
 }
+//This class lets us register items into the code so we can then add textures and models so it appears in game.
